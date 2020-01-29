@@ -59,6 +59,6 @@ public class HomeController {
 
         List<Article> articles = articleService.findAll();
 
-        articles.forEach(name ->  writer.println(name.getLibelle()));
+        articles.forEach(article ->  writer.println(article.getLibelle() + ";" + article.getPrix()));
     }
 }
