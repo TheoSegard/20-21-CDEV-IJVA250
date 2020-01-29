@@ -57,13 +57,8 @@ public class HomeController {
         response.setHeader("Content-Disposition", "attachment; filename=\"export-articles.csv\"");
         PrintWriter writer = response.getWriter();
 
-        ArticleServiceImpl articleService = new ArticleServiceImpl(articleRepository);
         List<Article> articles = articleService.findAll();
 
-        System.out.println(articles);
-      //  articles.forEach(writer::println);
-
-
-
+        articles.forEach(name ->  writer.println(name.getLibelle()));
     }
 }
